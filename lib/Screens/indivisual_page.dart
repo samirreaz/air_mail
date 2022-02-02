@@ -1,4 +1,6 @@
 import 'package:airmail/Model/chat_model.dart';
+import 'package:airmail/Screens/camera_page_indivisual.dart';
+// import 'package:airmail/Screens/camera_screen.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 
@@ -182,7 +184,15 @@ class _IndivisualPageState extends State<IndivisualPage> {
                                       color: Colors.purpleAccent[400],
                                     ),
                                     IconButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                CameraIndivisual(),
+                                          ),
+                                        );
+                                      },
                                       icon: Icon(Icons.camera_alt),
                                       color: Colors.purpleAccent[400],
                                     ),

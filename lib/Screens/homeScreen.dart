@@ -1,4 +1,5 @@
 import 'package:airmail/DesignUI/drawer_components.dart';
+import 'package:airmail/Page/camera_page.dart';
 import 'package:airmail/Page/chat_page.dart';
 import 'package:airmail/Screens/select_contact_page.dart';
 import 'package:flutter/material.dart';
@@ -109,9 +110,7 @@ class _HomeScreenState extends State<HomeScreen>
       body: TabBarView(
         controller: _tabController,
         children: [
-          Center(
-            child: Text('Camera'),
-          ),
+          CameraPage(),
           ChatPage(),
           SelectContact(),
           CallScreen(),
