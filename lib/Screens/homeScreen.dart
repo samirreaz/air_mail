@@ -1,6 +1,7 @@
 import 'package:airmail/DesignUI/drawer_components.dart';
 import 'package:airmail/Page/camera_page.dart';
 import 'package:airmail/Page/chat_page.dart';
+import 'package:airmail/Screens/game_screen.dart';
 import 'package:airmail/Screens/select_contact_page.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this, initialIndex: 1);
+    _tabController = TabController(length: 4, vsync: this, initialIndex: 0);
   }
 
   @override
@@ -87,10 +88,6 @@ class _HomeScreenState extends State<HomeScreen>
           controller: _tabController,
           tabs: [
             Tab(
-              icon: Icon(Icons.camera_alt),
-              text: 'Camera',
-            ),
-            Tab(
               icon: Icon(Icons.inbox),
               text: 'Inbox',
             ),
@@ -101,7 +98,11 @@ class _HomeScreenState extends State<HomeScreen>
             Tab(
               icon: Icon(Icons.call),
               text: 'Calls',
-            )
+            ),
+            Tab(
+              icon: Icon(Icons.sports_esports_outlined),
+              text: 'Games',
+            ),
           ],
         ),
         elevation: 20,
@@ -110,10 +111,11 @@ class _HomeScreenState extends State<HomeScreen>
       body: TabBarView(
         controller: _tabController,
         children: [
-          CameraPage(),
+          // CameraPage(),
           ChatPage(),
           SelectContact(),
           CallScreen(),
+          GameScreen(),
         ],
       ),
       drawer: DrawerComponent(),
