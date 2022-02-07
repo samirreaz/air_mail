@@ -25,48 +25,49 @@ class _CameraScreenState extends State<CameraScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView(
-      children: [
-        SizedBox(height: 50),
-        imageFile != null
-            ? Stack(
-                children: [
-                  Container(
-                    child: Image.file(imageFile!),
-                  ),
-                  Positioned(
-                      child: CircleAvatar(
-                        radius: MediaQuery.of(context).size.width * 0.08,
-                        child: Icon(
-                          Icons.send_to_mobile_rounded,
-                          size: MediaQuery.of(context).size.width * 0.13,
-                          color: Colors.purpleAccent[400],
+      body: ListView(
+        children: [
+          SizedBox(height: 50),
+          imageFile != null
+              ? Stack(
+                  children: [
+                    Container(
+                      child: Image.file(imageFile!),
+                    ),
+                    Positioned(
+                        child: CircleAvatar(
+                          radius: MediaQuery.of(context).size.width * 0.08,
+                          child: Icon(
+                            Icons.send_to_mobile_rounded,
+                            size: MediaQuery.of(context).size.width * 0.13,
+                            color: Colors.purpleAccent[400],
+                          ),
+                          backgroundColor: Colors.amber[100],
                         ),
-                        backgroundColor: Colors.amber[100],
-                      ),
-                      bottom: 12,
-                      right: 10),
-                ],
-              )
-            : Container(
-                height: MediaQuery.of(context).size.height * 0.3,
-                width: double.infinity,
+                        bottom: 12,
+                        right: 10),
+                  ],
+                )
+              : Container(
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  width: double.infinity,
+                ),
+          Spacer(),
+          Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: IconButton(
+              onPressed: () {
+                _getFromCamera();
+              },
+              icon: Icon(
+                Icons.photo_camera_outlined,
+                color: Colors.purpleAccent[400],
+                size: MediaQuery.of(context).size.width * 0.1,
               ),
-        Spacer(),
-        Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: IconButton(
-            onPressed: () {
-              _getFromCamera();
-            },
-            icon: Icon(
-              Icons.photo_camera_outlined,
-              color: Colors.purpleAccent[400],
-              size: MediaQuery.of(context).size.width * 0.1,
             ),
           ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 }
