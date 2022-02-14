@@ -1,3 +1,4 @@
+import 'package:airmail/Screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'Screens/homeScreen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.purpleAccent[400],
         accentColor: Colors.pinkAccent[400],
       ),
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
