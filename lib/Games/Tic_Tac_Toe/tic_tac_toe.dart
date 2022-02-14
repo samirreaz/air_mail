@@ -1,3 +1,4 @@
+import 'package:airmail/Games/Tic_Tac_Toe/Tic_game_function.dart';
 import 'package:flutter/material.dart';
 
 class TicTacToy extends StatelessWidget {
@@ -5,6 +6,8 @@ class TicTacToy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: GameFunctionTic(),
+    );
   }
 }
