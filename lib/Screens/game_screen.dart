@@ -14,6 +14,7 @@ class _GameScreenState extends State<GameScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.indigoAccent,
       body: ListView(
         children: [
           InkWell(
