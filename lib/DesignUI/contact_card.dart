@@ -16,11 +16,12 @@ class ContactCard extends StatelessWidget {
         ),
         title: Text(
           contact.name,
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
         ),
         subtitle: Text(
           contact.status,
-          style: TextStyle(fontSize: 13),
+          style: TextStyle(fontSize: 13, color: Colors.white),
         ),
       ),
     );
