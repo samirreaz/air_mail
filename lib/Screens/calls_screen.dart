@@ -54,6 +54,7 @@ class _CallScreenState extends State<CallScreen> {
       )
     ];
     return Scaffold(
+      backgroundColor: Colors.indigoAccent,
       body: ListView.builder(
         itemCount: calls.length,
         itemBuilder: (context, index) {
@@ -67,6 +68,7 @@ class _CallScreenState extends State<CallScreen> {
   Widget callCard(
       String name, IconData icon, Color color, String time, String img) {
     return Card(
+      color: Colors.indigoAccent,
       margin: EdgeInsets.only(bottom: 0.5),
       child: ListTile(
         leading: CircleAvatar(
@@ -74,7 +76,10 @@ class _CallScreenState extends State<CallScreen> {
           backgroundImage: AssetImage(img),
         ),
         title: Text(name,
-            style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500)),
+            style: TextStyle(
+                fontSize: 19,
+                fontWeight: FontWeight.w500,
+                color: Colors.white)),
         subtitle: Row(
           children: [
             Icon(
@@ -84,14 +89,14 @@ class _CallScreenState extends State<CallScreen> {
             SizedBox(width: 6),
             Text(
               time,
-              style: TextStyle(fontSize: 13),
+              style: TextStyle(fontSize: 13, color: Colors.white),
             ),
           ],
         ),
         trailing: Icon(
           Icons.call,
           size: 25,
-          color: Colors.purpleAccent[400],
+          color: Colors.white,
         ),
       ),
     );
