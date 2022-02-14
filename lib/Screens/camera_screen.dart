@@ -38,7 +38,7 @@ class _CameraScreenState extends State<CameraScreen> {
                         child: CircleAvatar(
                           radius: MediaQuery.of(context).size.width * 0.08,
                           child: Icon(
-                            Icons.send_to_mobile_rounded,
+                            Icons.done,
                             size: MediaQuery.of(context).size.width * 0.13,
                             color: Colors.purpleAccent[400],
                           ),
