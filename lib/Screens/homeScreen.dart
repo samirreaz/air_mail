@@ -1,4 +1,5 @@
 import 'package:airmail/DesignUI/drawer_components.dart';
+import 'package:airmail/Model/chat_model.dart';
 import 'package:airmail/Page/camera_page.dart';
 import 'package:airmail/Page/chat_page.dart';
 import 'package:airmail/Screens/game_screen.dart';
@@ -8,7 +9,11 @@ import 'package:flutter/material.dart';
 import 'calls_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen(
+      {Key? key, required this.chatmodels, required this.sourceChat})
+      : super(key: key);
+  final List<ChatModel> chatmodels;
+  final ChatModel sourceChat;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -111,8 +116,10 @@ class _HomeScreenState extends State<HomeScreen>
       body: TabBarView(
         controller: _tabController,
         children: [
-          // CameraPage(),
-          ChatPage(),
+          ChatPage(
+            chatmodels: widget.chatmodels,
+            sourceChat: widget.sourceChat,
+          ),
           SelectContact(),
           CallScreen(),
           GameScreen(),
