@@ -117,7 +117,7 @@ class _SelectContactState extends State<SelectContact> {
       //     ),
       //   ],
       // ),
-
+      backgroundColor: Colors.indigoAccent,
       body: ListView.builder(
         itemCount: contacts.length,
         itemBuilder: (context, index) {
