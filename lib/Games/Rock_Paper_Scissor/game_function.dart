@@ -33,7 +33,8 @@ class _GameFunctionState extends State<GameFunction> {
         children: [
           Spacer(),
           Container(
-            padding: EdgeInsets.only(top: 100),
+            padding:
+                EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
             child: hasChosen
                 ? Column(
                     children: [
@@ -44,7 +45,7 @@ class _GameFunctionState extends State<GameFunction> {
                             children: [
                               userPicked,
                               SizedBox(
-                                height: 10,
+                                height: MediaQuery.of(context).size.height / 20,
                               ),
                               Text(
                                 "You picked",
@@ -62,7 +63,7 @@ class _GameFunctionState extends State<GameFunction> {
                             children: [
                               compPicked,
                               SizedBox(
-                                height: 10,
+                                height: MediaQuery.of(context).size.height / 20,
                               ),
                               Text(
                                 'Computer picked',
@@ -87,7 +88,9 @@ class _GameFunctionState extends State<GameFunction> {
                       //   height: MediaQuery.of(context).size.height * 0.2,
                       // ),
                       Container(
-                        padding: EdgeInsets.only(top: 140),
+                        // alignment: Alignment.center,
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.08),
                         width: double.infinity,
                         child: RawMaterialButton(
                           onPressed: () {
@@ -98,7 +101,7 @@ class _GameFunctionState extends State<GameFunction> {
                             );
                             print(hasChosen);
                           },
-                          padding: EdgeInsets.all(16.0),
+                          // padding: EdgeInsets.all(16.0),
                           shape: StadiumBorder(
                             side: BorderSide(color: Colors.purple, width: 3),
                           ),
@@ -165,15 +168,15 @@ class _GameFunctionState extends State<GameFunction> {
                     ],
                   ),
           ),
-          Spacer(),
           Container(
+            // alignment: Alignment.center,
             width: double.infinity,
             child: RawMaterialButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => HowToPlay()));
               },
-              padding: EdgeInsets.all(16.0),
+              // padding: EdgeInsets.all(16.0),
               shape: StadiumBorder(
                 side: BorderSide(color: Colors.purple, width: 3),
               ),
@@ -183,9 +186,6 @@ class _GameFunctionState extends State<GameFunction> {
               ),
             ),
           ),
-          SizedBox(
-            height: 30,
-          )
         ],
       ),
     );
