@@ -1,3 +1,4 @@
+import 'package:airmail/Screens/developer_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class DrawerComponent extends StatelessWidget {
@@ -58,33 +59,42 @@ class DrawerComponent extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.people_outline),
-            title: Text('New Group'),
-          ),
-          ListTile(
-            leading: Icon(Icons.person_outlined),
-            title: Text('Contacts'),
-          ),
-          ListTile(
-            leading: Icon(Icons.call_outlined),
-            title: Text('Calls'),
-          ),
-          ListTile(
             leading: Icon(Icons.bookmark_border_outlined),
-            title: Text('Saved Message'),
+            title: Text(
+              'Saved Message',
+              style: TextStyle(fontSize: 18),
+            ),
           ),
           ListTile(
             leading: Icon(Icons.settings_outlined),
-            title: Text('Settings'),
+            title: Text(
+              'Settings',
+              style: TextStyle(fontSize: 18),
+            ),
           ),
           ListTile(
             leading: Icon(Icons.person_add_alt_outlined),
-            title: Text('Invite Friends'),
+            title: Text(
+              'Invite Friends',
+              style: TextStyle(fontSize: 18),
+            ),
           ),
           ListTile(
             leading: Icon(Icons.help_outline_outlined),
-            title: Text('AirMails Features'),
-          )
+            title: Text(
+              'AirMails Features',
+              style: TextStyle(fontSize: 18),
+            ),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DeveloperScreen())),
+            leading: Icon(Icons.person),
+            title: Text(
+              'Developer Contact',
+              style: TextStyle(color: Colors.cyan, fontSize: 18),
+            ),
+          ),
         ],
       ),
     );
