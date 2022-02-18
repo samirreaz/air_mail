@@ -1,10 +1,14 @@
+import 'dart:io';
+
 import 'package:airmail/DesignUI/drawer_components.dart';
 import 'package:airmail/Model/chat_model.dart';
 import 'package:airmail/Page/camera_page.dart';
 import 'package:airmail/Page/chat_page.dart';
 import 'package:airmail/Screens/game_screen.dart';
+import 'package:airmail/Screens/login_screen.dart';
 import 'package:airmail/Screens/select_contact_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'calls_screen.dart';
 
@@ -80,8 +84,27 @@ class _HomeScreenState extends State<HomeScreen>
                   child: Text('Settings'),
                 ),
                 PopupMenuItem(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginScreen(),
+                      ),
+                    );
+                  },
                   value: 'Log out',
                   child: Text('Log out'),
+                ),
+                PopupMenuItem(
+                  onTap: () {
+                    if (Platform.isAndroid) {
+                      SystemNavigator.pop();
+                    } else {
+                      exit(0);
+                    }
+                  },
+                  value: 'Exit',
+                  child: Text('Exit'),
                 ),
               ];
             },
